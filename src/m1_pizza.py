@@ -255,7 +255,7 @@ def run_test_pizza():
     window = rg.RoseWindow(400, 400, title)
     circle = rg.Circle(rg.Point(200, 200), 150)
     circle.outline_thickness = 3
-    pizza(window, circle, 5, 'blue', 3)
+    pizza(window, circle, 10, 'blue', 3)
     window.close_on_mouse_click()
 
     # Tests 2 and 3 (on the same window):
@@ -264,12 +264,12 @@ def run_test_pizza():
 
     circle = rg.Circle(rg.Point(125, 125), 50)
     circle.fill_color = 'purple'
-    pizza(window, circle, 8, 'white', 5)
+    pizza(window, circle, 15, 'pink', 10)
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(350, 200), 125)
-    circle.fill_color = 'blue'
-    pizza(window, circle, 20, 'green1', 3)
+    circle.fill_color = 'green'
+    pizza(window, circle, 20, 'red', 3)
 
     window.close_on_mouse_click()
 
@@ -311,7 +311,7 @@ def pizza(window, circle, number_of_slices, color, thickness):
       :type thickness:        int
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -404,7 +404,14 @@ def polygon(window, circle, number_of_segments, color, thickness):
     #    (defined above) to generate the relevant points,
     #    and then draw lines that are based in part on those points.
     # ------------------------------------------------------------------
-
+    circle.attach_to(window)
+    amount = generate_points_on_circle(circle, number_of_segments)
+    for k in range(len(amount)):
+        lines = rg.Line(amount[k], amount[k+1])
+        lines.color = color
+        lines.thickness = thickness
+        lines.attach_to(window)
+    window.render()
 
 def run_test_fancy_polygon():
     """ Tests the   fancy_polygon   function. """
