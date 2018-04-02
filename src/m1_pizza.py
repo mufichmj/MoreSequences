@@ -325,6 +325,8 @@ def pizza(window, circle, number_of_slices, color, thickness):
         lines = rg.Line(amount[k], circle.center)
         lines.color = color
         lines.thickness = thickness
+        lines.attach_to(window)
+    window.render()
 
 
 def run_test_polygon():
