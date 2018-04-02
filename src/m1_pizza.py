@@ -319,6 +319,12 @@ def pizza(window, circle, number_of_slices, color, thickness):
     #    (defined above) to generate the relevant points,
     #    and then draw lines that are based in part on those points.
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    amount = generate_points_on_circle(circle, number_of_slices)
+    for k in range(len(amount)):
+        lines = rg.Line(amount[k], circle.center)
+        lines.color = color
+        lines.thickness = thickness
 
 
 def run_test_polygon():
