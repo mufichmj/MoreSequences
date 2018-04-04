@@ -213,7 +213,7 @@ def draw_points_on_circle(window, circle, number_of_points, color):
       :type color:            str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -332,7 +332,7 @@ def pizza(window, circle, number_of_slices, color, thickness):
 def run_test_polygon():
     """ Tests the   polygon   function. """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement this TEST function.
+    # DONE: 7. Implement this TEST function.
     #   It TESTS the   polygon   function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -364,6 +364,15 @@ def run_test_polygon():
     # Test 3:  (YOU write THIS test)
     # ------------------------------------------------------------------
 
+    title = 'POLYGON Mariah'
+    window = rg.RoseWindow(550, 400, title)
+
+    circle = rg.Circle(rg.Point(100, 100), 80)
+    circle.outline_thickness = 5
+    circle.fill_color = 'lime green'
+    polygon(window, circle, 4, 'pink', 10)
+
+    window.close_on_mouse_click()
 
 def polygon(window, circle, number_of_segments, color, thickness):
     """
@@ -396,7 +405,7 @@ def polygon(window, circle, number_of_segments, color, thickness):
       :type thickness:          int
     """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -407,10 +416,11 @@ def polygon(window, circle, number_of_segments, color, thickness):
     circle.attach_to(window)
     amount = generate_points_on_circle(circle, number_of_segments)
     for k in range(len(amount)):
-        lines = rg.Line(amount[k], amount[k+1])
+        lines = rg.Line(amount[k], amount[k-1])
         lines.color = color
         lines.thickness = thickness
         lines.attach_to(window)
+
     window.render()
 
 def run_test_fancy_polygon():
