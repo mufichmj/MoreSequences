@@ -47,7 +47,10 @@ def run_test_make_simple_list():
     print('Actual:  ', actual)
 
     # Test 2 (add your test here):
-
+    expected = [2, 3, 4, 5, 6, 7, 8]
+    actual = make_simple_list(2, 8)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 def make_simple_list(m, n):
     """
@@ -80,7 +83,7 @@ def make_simple_list(m, n):
 def run_test_make_simple_string():
     """ Tests the   make_simple_string    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  make_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -91,10 +94,19 @@ def run_test_make_simple_string():
     print('Testing the   make_simple_string   function:')
     print('--------------------------------------------------')
 
+    #Test 1
     expected = '5-6-7-8-9-10-11-12-13-'
     actual = make_simple_string(5, 13)
     print('Expected:', expected)
     print('Actual:  ', actual)
+
+    #Test 2
+    expected = '2-3-4-5-6-7-8-9-'
+    actual = make_simple_string(2, 9)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+
 
 def make_simple_string(m, n):
     """
