@@ -193,7 +193,6 @@ def make_less_simple_string(m, n):
     sequence = ""
     for k in range(m, n):
         sequence = sequence + str(k) + "-"
-
     sequence = sequence + str(n)
 
     return sequence
